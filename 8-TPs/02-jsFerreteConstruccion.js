@@ -29,7 +29,9 @@ function Circulo ()
     radio = document.getElementById("txtIdRadio").value;
     radio = parseInt(radio);
 
-    alambre = 2*3.14*radio*3; // Circunferencia de un círculo = 2*PI*radio
+    // alambre = 2*3.14*radio*3; // Circunferencia de un círculo = 2*PI*radio
+    alambre = (Math.PI *2*radio)*3;
+    alambre = alambre.toFixed(2);
 
     alert("El alambre necesario para esas medidas es: " + alambre);
 	
