@@ -1,6 +1,5 @@
 function mostrar()
 {
-	//tomo la edad
 	let edad;
 	
 	edad = document.getElementById("txtIdEdad").value;
@@ -10,4 +9,4 @@ function mostrar()
 		alert("Sos mayor de edad");
 	}
 	
-}//FIN DE LA FUNCIÓN
+}
