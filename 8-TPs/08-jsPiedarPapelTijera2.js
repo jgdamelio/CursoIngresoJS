@@ -5,27 +5,74 @@ var ContadorDePerdidas=0;
 
 function comenzar()
 {
-	//Genero el número RANDOM entre 1 y 3
-	 	
+	eleccionMaquina = Math.floor(Math.random() * 3 + 1);
+	console.log(eleccionMaquina);
+}
 
-
-
-}//FIN DE LA FUNCIÓN
 function piedra()
 {
-	
+	if(eleccionMaquina == 1)
+    {
+        alert("Empató");
+    }
+    else
+    {
+        if(eleccionMaquina == 2)
+        {
+            alert("Perdió");
+        }
+        else
+        {
+            alert("Ganó");
+        }
+    }
+}
 
-}//FIN DE LA FUNCIÓN
 function papel()
 {
+	if(eleccionMaquina == 1)
+    {
+        alert("Ganó");
+    }
+    else
+    {
+        if(eleccionMaquina == 2)
+        {
+            alert("Empató");
+        }
+        else
+        {
+            alert("Perdió");
+        }
+    }
+}
 
-}//FIN DE LA FUNCIÓN
 function tijera()
 {
-	
-}//FIN DE LA FUNCIÓN
+	if(eleccionMaquina == 1)
+    {
+        alert("Perdió");
+    }
+    else
+    {
+        if(eleccionMaquina == 2)
+        {
+            alert("Ganó");
+        }
+        else
+        {
+            alert("Empató");
+        }
+    }
+}
 
 function mostrarResultado()
 {
+	ContadorDeEmpates=ContadorDeEmpates+1;
+	ContadorDeGanadas=ContadorDeGanadas+1;
+	ContadorDePerdidas=ContadorDePerdidas+1;
 
+	document.getElementById("txtIdGanadas").value = ContadorDeGanadas;
+	document.getElementById("txtIdPerdidas").value = ContadorDePerdidas;
+	document.getElementById("txtIdEmpatadas").value = ContadorDeEmpates;
 }

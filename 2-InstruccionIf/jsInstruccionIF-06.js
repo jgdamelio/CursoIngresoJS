@@ -10,6 +10,19 @@ function mostrar()
 		alert("Es mayor de edad");
 	}
 
+	else
+	{
+		if(edad < 13)
+		{
+			alert("Es un niño");
+		}
+
+		else
+		{
+			alert("Es adolescente");
+		}
+	}
+	
 	/*
 	else
 	{
@@ -24,17 +37,4 @@ function mostrar()
 		}
 	}
 	*/
-
-	else
-	{
-		if(edad < 13)
-		{
-			alert("Es un niño");
-		}
-
-		else
-		{
-			alert("Es adolescente");
-		}
-	}
 }

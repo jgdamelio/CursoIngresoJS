@@ -1,8 +1,23 @@
+
+/* Test
+
+notaExamen = 9
+notaExamen = 8
+notaExamen = 4
+notaExamen = 3
+*/
+
+
 function mostrar()
 {
 	let notaExamen;
 
-	notaExamen = Math.floor(Math.random() * 11);
+	notaExamen = Math.floor(Math.random() * 10 + 1);
+
+	/* Hardcodeo
+
+	notaExamen = 9
+	*/
 
 	alert(notaExamen);
 
@@ -10,14 +25,15 @@ function mostrar()
 	{
 		alert("Excelente");
 	}
-	else{
+	else
+	{
 		if (notaExamen < 4)
 		{
 			alert("Vamos, la próxima se puede");
 		}
 		else
 		{
-			alert("Aprobo");
+			alert("Aprobó");
 		}
 	}
 

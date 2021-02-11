@@ -8,6 +8,103 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
+
+function CalcularPrecio () 
+{
+ 	// Declaración variables embebidas del HTML
+    let cantidadLamparas;
+    let marcaLamparas;
+    let precioParcial;
+  
+    // Declaración variables de porcentaje de descuento e importe final
+    let porcentajeDescuento;
+    let importeFinal;
+    let aumentoDiez;
+    let ingresosBrutos;
+  
+    // Asignación y parseo del input cantidad lámparas
+    cantidadLamparas = document.getElementById("txtIdCantidad").value;
+    cantidadLamparas = parseInt(cantidadLamparas);
+  
+    // Asignación del input marca lámparas
+    marcaLamparas = document.getElementById("Marca").value;
+
+    // Asignación precio final de cada lámpara
+    precioParcial = 35 * cantidadLamparas;
+  
+    // Solución al enunciado A, B, C y D
+    if(cantidadLamparas > 5)
+    {
+        porcentajeDescuento = 50;
+    }
+    
+    else
+    {
+        if(cantidadLamparas == 5)
+        {
+            if(marcaLamparas == "ArgentinaLuz")
+            {
+                porcentajeDescuento = 40;
+            }
+            else
+            {
+                porcentajeDescuento = 30;
+            }
+        }
+        else
+        {
+            if(cantidadLamparas == 4)
+            {
+                if(marcaLamparas == "ArgentinaLuz" || marcaLamparas == "FelipeLamparas")
+                {
+                    porcentajeDescuento = 25;
+                }
+                else
+                {
+                    porcentajeDescuento = 20;
+                }
+            }
+            else
+            {
+                if(cantidadLamparas == 3)
+                {
+                    if(marcaLamparas == "ArgentinaLuz")
+                    {
+                        porcentajeDescuento = 15;
+                    }
+                    else
+                    {
+                        if(marcaLamparas == "FelipeLamparas")
+                        {
+                            porcentajeDescuento = 10;
+                        }
+                        else
+                        {
+                            porcentajeDescuento = 5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    // Cálculos
+    importeFinal = precioParcial - (precioParcial * porcentajeDescuento /100);
+    aumentoDiez = importeFinal * 10 /100;
+    ingresosBrutos = importeFinal + aumentoDiez;
+    
+    // Salida del programa por ID
+    document.getElementById("txtIdprecioDescuento").value = importeFinal;
+
+    // Solución enunciado E
+    if(importeFinal > 119)
+    {
+        alert("Usted pagó $" + aumentoDiez + " de IIBB");
+        document.getElementById("txtIdprecioDescuento").value = ingresosBrutos;
+    }
+}
+
+/*
 function CalcularPrecio () 
 {
     // Declaración variables embebidas del HTML
@@ -77,7 +174,7 @@ function CalcularPrecio ()
         else
         {
         document.getElementById("txtIdprecioDescuento").value = precioFinal - descuentoTreinta;
-         }
+        }
     }
 
     // Solución al enunciado C
@@ -124,3 +221,4 @@ function CalcularPrecio ()
     }
 
 }
+*/
